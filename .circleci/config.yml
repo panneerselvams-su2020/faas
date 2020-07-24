@@ -72,9 +72,9 @@ jobs:
           name: Update JAR in lambda function
           command: |
             allfunctions=$(aws lambda list-functions --query 'Functions[?Version == `$LATEST`].{FunctionName:FunctionName}')
-            if [  `echo $allfunctions | grep -w -c "webapp" ` -gt 0 ]
+            if [  `echo $allfunctions | grep -w -c "passwordlambda" ` -gt 0 ]
             then
-              echo "Function webapp already exists. Updating it."
+              echo "Function passwordlambda already exists. Updating it."
               aws lambda update-function-code --region ${AWS_REGION} \
                                               --function-name passwordlambda \
                                               --s3-bucket codedeploy.sridharprasadpanneerselvam.me \
