@@ -1,4 +1,4 @@
-package com.cloud.lambdaserverless;
+package com.cloud;
 
 
 import com.amazonaws.AmazonClientException;
@@ -17,6 +17,7 @@ import com.amazonaws.services.simpleemail.model.*;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Calendar;
+
 
 public class ResetPasswordEmail implements RequestHandler<SNSEvent, Object>
 {
