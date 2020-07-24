@@ -75,7 +75,7 @@
 
     <build>
         <finalName>lambda-serverless</finalName>
-        <plugins>
+        <!-- <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -91,7 +91,29 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
+        </plugins> -->
+
+         <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.1.1</version>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+        <configuration>
+          <artifactSet>
+            <excludes>
+              <exclude>com.amazonaws:aws-lambda-java-events</exclude>
+              <exclude>com.amazonaws:aws-lambda-java-core</exclude>
+            </excludes>
+          </artifactSet>
+        </configuration>
+      </execution>
+    </executions>
+  </plugin>
     </build>
 
 </project>
