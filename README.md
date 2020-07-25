@@ -13,7 +13,6 @@ Technology Stack
 Java 11, Spring Boot 4.6.2, DynamoDB, Terraform
 
 User stories for Web Application REST API call:
-API Endpoint: Authenticated HTTP GET to /v1/bills/due/x_days
 
 User should be able to request link for password reset in the system via email.
 As a user, I want to the link to update the password sent to me in an email.
